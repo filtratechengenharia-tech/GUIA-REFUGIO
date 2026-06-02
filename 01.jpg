@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refúgio Atrás da Pedra — Guia do Hóspede</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-escuro: #2d3a2e;
+    --verde-medio: #4a6741;
+    --verde-claro: #7a9e6e;
+    --creme: #f5f0e8;
+    --creme-escuro: #ede5d4;
+    --marrom: #8b6f47;
+    --marrom-claro: #c4a882;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--creme);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* CAPA */
+  .capa {
+    background: var(--verde-escuro);
+    color: var(--creme);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .capa::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(122,158,110,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,168,130,0.1) 0%, transparent 50%);
+  }
+
+  .capa-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+
+  .capa-subtitulo {
+    font-family: 'Crimson Pro', serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--marrom-claro);
+    margin-bottom: 16px;
+  }
+
+  .capa h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 7vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .capa h1 em {
+    font-style: italic;
+    color: var(--marrom-claro);
+  }
+
+  .capa-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--marrom-claro);
+    margin: 24px auto;
+  }
+
+  .capa-info {
+    font-size: 14px;
+    color: rgba(245,240,232,0.7);
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .capa-info span { display: flex; align-items: center; gap: 6px; }
+
+  /* AVISO IMPORTANTE */
+  .aviso-global {
+    background: var(--marrom);
+    color: var(--creme);
+    padding: 14px 24px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .aviso-global strong { font-weight: 600; }
+
+  /* CONTAINER */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* SEÇÕES */
+  .secao {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid rgba(138,111,71,0.2);
+  }
+
+  .secao:last-child { border-bottom: none; }
+
+  .secao-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .secao-icone {
+    width: 42px;
+    height: 42px;
+    background: var(--verde-escuro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .secao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--verde-escuro);
+  }
+
+  /* CARDS */
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--verde-claro);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  .card-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .card-local {
+    font-size: 13px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 15.5px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+
+  .card-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .card-info-item {
+    font-size: 13px;
+    color: var(--text-light);
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.4;
+  }
+
+  .card-info-item .label {
+    color: var(--marrom);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+
+  .badge-facil { background: #d4edda; color: #1a6632; }
+  .badge-moderado { background: #fff3cd; color: #856404; }
+  .badge-avancado { background: #f8d7da; color: #842029; }
+  .badge-carro { background: #d1ecf1; color: #0c5460; }
+  .badge-gratis { background: #e2d9f3; color: #5a3e8a; }
+  .badge-pago { background: #fde8d8; color: #8a4a1a; }
+  .badge-destaque { background: var(--verde-escuro); color: var(--creme); }
+
+  /* SUBSECAO */
+  .subsecao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--marrom);
+    margin: 24px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed rgba(138,111,71,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+  }
+
+  /* AVISO CARD */
+  .aviso-card {
+    background: #fff8f0;
+    border: 1px solid rgba(196,168,130,0.5);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--marrom);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .aviso-card .icone { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  /* DICA ANFITRIAO */
+  .dica-anfitriao {
+    background: linear-gradient(135deg, var(--verde-escuro) 0%, #3d5c3e 100%);
+    color: var(--creme);
+    border-radius: 12px;
+    padding: 28px 28px 24px;
+    margin: 40px 0 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dica-anfitriao::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+  }
+
+  .dica-anfitriao-titulo {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--marrom-claro);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .dica-anfitriao p {
+    font-size: 16px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* COMPRAS */
+  .compras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .compras-item {
+    background: white;
+    border-radius: 8px;
+    padding: 14px 14px;
+    text-align: center;
+    border: 1px solid var(--creme-escuro);
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .compras-item .emoji { font-size: 22px; display: block; margin-bottom: 6px; }
+
+  /* EVENTOS */
+  .evento-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    border-top: 3px solid var(--marrom);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .evento-nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 4px;
+  }
+
+  .evento-data {
+    font-size: 13px;
+    color: var(--marrom);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  /* RODAPÉ */
+  .rodape {
+    background: var(--verde-escuro);
+    color: rgba(245,240,232,0.7);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .rodape h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--creme);
+    margin-bottom: 8px;
+  }
+
+  .rodape p { font-size: 14px; margin-bottom: 4px; }
+
+  .rodape-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--marrom-claro);
+    margin: 20px auto;
+  }
+
+  .rodape-nota {
+    font-size: 12px;
+    color: rgba(245,240,232,0.4);
+    margin-top: 24px;
+    font-style: italic;
+  }
+
+  /* PRINT */
+  @media print {
+    .capa { padding: 40px 24px; }
+    .card:hover { transform: none; box-shadow: none; }
+    .aviso-global { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .capa { padding: 48px 24px 40px; }
+    .compras-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-info { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="capa-inner">
+    <p class="capa-subtitulo">Gonçalves · Minas Gerais · Serra da Mantiqueira</p>
+    <h1>Refúgio<br><em>Atrás da Pedra</em></h1>
+    <div class="capa-divider"></div>
+    <p style="font-size:16px; color: rgba(245,240,232,0.8); margin-bottom:20px;">Guia de Experiências do Hóspede</p>
+    <div class="capa-info">
+      <span>🏠 Até 8 pessoas</span>
+      <span>🏊 Piscina aquecida</span>
+      <span>⛰️ 1.152m de altitude</span>
+      <span>⭐ 4.95 no Airbnb</span>
+    </div>
+  </div>
+</div>
+
+<!-- AVISO GLOBAL -->
+<div class="aviso-global">
+  📞 <strong>Importante:</strong> Antes de visitar qualquer atração, entre em contato para confirmar horários de funcionamento — especialmente em feriados e baixa temporada.
+</div>
+
+<div class="container">
+
+  <!-- 1. NA PROPRIEDADE -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🏠</div>
+      <h2 class="secao-titulo">Na Própria Propriedade</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">✨</span>
+      <span>Tudo abaixo é gratuito e disponível a qualquer momento da sua estadia, sem deslocamento.</span>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">☕ Deck ao Amanhecer <span class="badge badge-destaque">Imperdível</span></div>
+      <div class="card-desc">Em dias frios e úmidos — especialmente no inverno e no outono — a névoa que desce das pedras logo cedo, com o canto dos pássaros e o silêncio absoluto da Mantiqueira, é algo que nenhum roteiro descreve. Quando acontece, é inesquecível. Mas atenção: depende da temperatura e da época do ano — não é garantido todos os dias. Vale sempre tentar! ☕</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">🏊 Piscina Aquecida com Deck</div>
+      <div class="card-desc">Relaxe em qualquer hora do dia. A piscina é aquecida — ideal para as noites frias da Mantiqueira.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">🥾 Trilha no Terreno</div>
+      <div class="card-desc">Explore o entorno da propriedade. Vista para as pedras e serras da Mantiqueira. Ótima para crianças e pets logo na chegada.</div>
+    </div>
+  </div>
+
+  <!-- 2. CACHOEIRAS -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">💧</div>
+      <h2 class="secao-titulo">Cachoeiras</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">🎒</span>
+      <span>Leve sempre: roupa de banho, sandália de borracha, toalha e água.</span>
+    </div>
+
+    <div class="subsecao-titulo">🟢 Fácil Acesso</div>
+
+    <div class="card">
+      <div class="card-titulo">Cachoeira do Simão <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 3,7 km do centro</div>
+      <div class="card-desc">Trilha curtinha de 5 minutos pela mata. Lugar tranquilo durante a semana. Pode estar movimentado em feriados.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cachoeira do Retiro <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 Bairro São Sebastião</div>
+      <div class="card-desc">Fácil acesso pela estrada. Uma das mais altas de Gonçalves, com água gelada e cristalina ótima para banho.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cachoeira dos Henriques <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 9,7 km do centro</div>
+      <div class="card-desc">A mais tranquila por ficar mais afastada. Várias quedas com ótimo ponto de banho na parte superior. Siga pelas pedras à esquerda para a vista privilegiada. Não se preocupe com as vaquinhas — são bem tranquilas!</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cachoeira das Sete Quedas <span class="badge badge-pago">Taxa de entrada</span></div>
+      <div class="card-local">📍 Bairro Retiro, 1,5 km do centro — Estrada São Sebastião</div>
+      <div class="card-desc">Vista incrível do deck logo na entrada. Estrutura com banheiros, lanchonete e trilha autoguiada. Fora de temporada abre apenas aos fins de semana.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">⚠️ Atenção:</span> <span>Não é própria para banho, mas belíssima para contemplação e fotos.</span></div>
+        <div class="card-info-item"><span class="label">💡 Dica:</span> <span>Combine com a Cachoeira do Retiro na mesma saída.</span></div>
+      </div>
+    </div>
+
+    <div class="subsecao-titulo">🟡 Moderado</div>
+
+    <div class="card">
+      <div class="card-titulo">Cachoeira das Andorinhas <span class="badge badge-avancado">⚠️ Fechada para manutenção</span></div>
+      <div class="card-local">📍 Bairro Martins, 2 km do centro</div>
+      <div class="card-desc">Uma das maiores e mais volumosas quedas de Gonçalves. <strong>Atualmente fechada para manutenção — confirme antes de visitar.</strong></div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">💡 Recomendação:</span> <span>Contratar guia local para o acesso.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. TRILHAS E MIRANTES -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🥾</div>
+      <h2 class="secao-titulo">Trilhas e Mirantes</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">🎒</span>
+      <span>Leve sempre: tênis fechado, água (mín. 1,5L), protetor solar, repelente e casaco leve.</span>
+    </div>
+
+    <div class="subsecao-titulo">🟢 Fácil</div>
+
+    <div class="card">
+      <div class="card-titulo">Mirante do Cruzeiro <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 Próximo ao portal de entrada de Gonçalves — primeira estradinha à direita</div>
+      <div class="card-desc">Acesso de carro até a entrada (portão de madeira). Pedestres podem entrar livremente. Vista bonita da cidade de um lado e a serra do outro. Passeio simples e rápido — ideal para o fim do dia.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Pedra do Cruzeiro — Bairro Atrás da Pedra <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 ~5 km do centro — nosso bairro!</div>
+      <div class="card-desc">O cartão de visitas de Gonçalves, com vista para a Serra dos Venâncios e dos Remédios. Saída ideal logo cedo pela manhã. Pergunte ao anfitrião sobre o melhor acesso saindo da propriedade.</div>
+    </div>
+
+    <div class="subsecao-titulo">🟡 Moderado</div>
+
+    <div class="card">
+      <div class="card-titulo">Pedra Chanfrada <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 1 km do restaurante ao topo — ~1h30 ida e volta</div>
+      <div class="card-desc">Trilha só de subida pela mata fechada, com 1.710m de altitude. No topo, uma cruz de madeira e vista para a Pedra do Forno.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">💡 Dica:</span> <span>Almoce no Restaurante Ao Pé da Pedra após a descida.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Pedra do Forno</div>
+      <div class="card-local">📍 Estrada São Sebastião — ~3,4 km, 1h30 ida e volta</div>
+      <div class="card-desc">Trilha sombreada pela mata de araucárias. Com 1.970m de altitude, oferece vista panorâmica de 360° — dá para ver Campos do Jordão, Monte Verde e a Pedra do Baú. No topo, uma pequena via ferrata de ~10 degraus e uma capelinha.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">⚠️ Atenção:</span> <span>Não recomendada para quem tem fobia a altura. Pequena taxa de manutenção na entrada.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Pedra de São Domingos <span class="badge badge-moderado">Moderado/Difícil</span></div>
+      <div class="card-local">📍 Região de Córrego do Bom Jesus, ~20 min</div>
+      <div class="card-desc">Trilha desafiadora com paisagens exuberantes da Mantiqueira. Pode ser combinada com o Pico da Raposa em um dia completo de aventura.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">💡 Recomendação:</span> <span>Ir com guia local.</span></div>
+      </div>
+    </div>
+
+    <div class="subsecao-titulo">🚗 Acesso de Carro — Mirante</div>
+
+    <div class="card">
+      <div class="card-titulo">Pico da Raposa <span class="badge badge-carro">Carro comum</span></div>
+      <div class="card-local">📍 Córrego do Bom Jesus, ~20 min de Gonçalves. Estrada Gonçalves–Córrego, com placas indicativas.</div>
+      <div class="card-desc">1.480m de altitude. Acesso por estrada pavimentada — qualquer carro chega. Vista panorâmica incrível da Mantiqueira, Córrego do Bom Jesus e Cambuí. Rampa de parapente. O pôr do sol daqui é espetacular.</div>
+    </div>
+  </div>
+
+  <!-- 4. GASTRONOMIA -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🍽️</div>
+      <h2 class="secao-titulo">Gastronomia & Bares</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">📞</span>
+      <span>Entre em contato antes de visitar para confirmar horários e disponibilidade, especialmente em dias de semana e baixa temporada.</span>
+    </div>
+
+    <div class="subsecao-titulo">🌿 Zona Rural / Bairros</div>
+
+    <div class="card">
+      <div class="card-titulo">Bar do Zezé <span class="badge badge-destaque">Raiz</span></div>
+      <div class="card-local">📍 Bairro Lambari — AMG-1930, km 07</div>
+      <div class="card-desc">🍽️ Boteco mineiro raiz: feijoada, quirera, panqueca e cerveja gelada. Clima autêntico de interior, sem frescura. Ótimo para grupos.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99815-0162</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @bardozeze.goncalves</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Sabor sem Freio <span class="badge badge-destaque">MasterChef</span></div>
+      <div class="card-local">📍 Estrada São Sebastião, km 1,5 — Bairro Retiro</div>
+      <div class="card-desc">🍽️ Cozinha mineira autoral do chef Danilo Costa (semifinalista MasterChef 2023). Especialidade: truta com virado encapotado, galinhada e bife ancho. Pet-friendly.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99753-8322</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @saborsemfreio</span></div>
+        <div class="card-info-item"><span class="label">⚠️</span> <span>Reserva recomendada</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Bistrô Todos os Vinhos <span class="badge badge-destaque">Enogastronomia</span></div>
+      <div class="card-local">📍 Estrada São Sebastião, km 1 — Pátio da Fazenda Retiro</div>
+      <div class="card-desc">🍽️ Os vinhos são os protagonistas — ampla seleção de rótulos cuidadosamente escolhidos com cardápio autoral que muda conforme a temporada. Vale reservar.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99660-6244</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @todososvinhos</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Quinta do Tacho</div>
+      <div class="card-local">📍 Estrada São Sebastião, km 1 — Pátio da Fazenda Retiro</div>
+      <div class="card-desc">🍽️ Comida mineira no fogão a lenha com mesas com vista para as montanhas. Considerado o melhor restaurante por quilo de Gonçalves. Polenta frita com canastra e linguiça especial. Pet-friendly na área externa.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99957-6270</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Sex: 12h–15h | Sáb: 12h–16h | Dom: 12h–15h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Sebastian Bar <span class="badge badge-destaque">Música ao vivo</span></div>
+      <div class="card-local">📍 Estrada São Sebastião das Três Orelhas, km 2</div>
+      <div class="card-desc">🍽️ Casarão cercado de verde com carnes, massas, risotos e aperitivos. Música ao vivo frequente. Vinhos e cervejas selecionados.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 3654-1265</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @sebastianbarerestaurante_</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Qui–Sex: 12h–18h | Sáb: 12h–18h | Dom: 12h–16h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Sabores da Mantiqueira — Petit Bistrot</div>
+      <div class="card-local">📍 Estrada Retiro ao Início da Terra Fria, km 6 — Bairro São Sebastião das Três Orelhas</div>
+      <div class="card-desc">🍽️ Comfort food com ingredientes da própria horta. Famoso pelo bisquiche (sanduíche de biscoito de queijo), quiches e sopas autorais. Opções para vegetarianos e veganos. Funciona a partir das 18h30.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99993-7479</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @saboresmantiqueira | saboresdamantiqueira.com.br</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cervejaria Bergway <span class="badge badge-destaque">Cerveja + Pizza</span></div>
+      <div class="card-local">📍 Estrada Bernardino Máximo de Castro, km 7 — Sertão do Cantagalo</div>
+      <div class="card-desc">🍽️ Cerveja artesanal própria e pizzas com ingredientes frescos locais. Também serve feijoada. Música ao vivo frequente. Cenário encantador a 7 km do centro.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99872-1001</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @cervejariabergway</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Qui–Sex: 12h–22h | Sáb–Dom: 11h–21h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">MariTaca's <span class="badge badge-destaque">Criativo</span></div>
+      <div class="card-local">📍 R. Antônio Mota da Silva, 1 — Praça São João Batista, Bairro dos Costas (~20 min)</div>
+      <div class="card-desc">🍽️ Chef Juliana Pellis, ex-cozinha do D.O.M de Alex Atala. Cozinha criativa mineira: tempurá de quiabo com maionese de pequi, purê de banana com truta. Um dos melhores da região. Fecha às quartas.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99927-4337</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @maritacas_restaurante</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Restaurante Karu</div>
+      <div class="card-local">📍 Estrada dos Venâncios</div>
+      <div class="card-desc">🍽️ Gastronomia contemporânea no meio do mato, chef Gabriela Gradim. Especialidade em brunch com truta defumada, rabada com parmesão e ovos cremosos. Surpreendente!</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Restaurante Ao Pé da Pedra</div>
+      <div class="card-local">📍 Acesso pela trilha da Pedra Chanfrada</div>
+      <div class="card-desc">🍽️ Comida mineira clássica no fogão a lenha, vista para a Pedra Chanfrada. Especialidade: feijão tropeiro e frango caipira. Famoso suco de amora. Ideal para almoçar após a trilha.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @restauranteaopedapedra</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Sáb, Dom e feriados: 12h–15h30 | Self-service por pessoa</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Restaurante Sauá <span class="badge badge-destaque">Enoturismo</span></div>
+      <div class="card-local">📍 Pousada Bicho do Mato — Sertão do Cantagalo, km 7,5</div>
+      <div class="card-desc">🍽️ Cozinha contemporânea com raízes caipiras, chef Vitor Pompeu. Ambiente panorâmico com cozinha integrada ao salão. Em anexo: Winebar da Vinícola Artesã com degustação de vinhos e queijos maturados locais — experiência completa de enoturismo.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @restaurantesaua | restaurantesaua.com.br</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Nó de Pinho Gastronomia <span class="badge badge-destaque">Romântico</span></div>
+      <div class="card-local">📍 Estrada São Sebastião das Três Orelhas, km 2,5 — Pousada Solar d'Araucária, Retiro</div>
+      <div class="card-desc">🍽️ Ambiente romântico com luz baixa e lareiras. Especialidades: risoto de pinhão, peixe empanado com farinha de amêndoa e frango na cerveja com creme de milho. Um dos mais sofisticados de Gonçalves. ⚠️ Confirme disponibilidade — funciona principalmente para hóspedes da pousada.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 3654-1398</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @nodepinhogastronomia</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Sex, Sáb e feriados: 13h–15h30 e 19h–22h | Dom: 13h–15h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Restaurante da Vilma</div>
+      <div class="card-local">📍 Estrada dos Venâncios, km 8</div>
+      <div class="card-desc">🍽️ Comida típica mineira no fogão a lenha, sistema self-service à vontade. Aquela sensação boa de parar no tempo. Abre fins de semana e feriados.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99837-0876</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Restaurante Vida Verde</div>
+      <div class="card-local">📍 Estrada de São Sebastião, km 3,5 — Bairro Boa Vista</div>
+      <div class="card-desc">🍽️ Culinária mineira tradicional em pousada aberta ao público. Especialidade em filé ao molho madeira e pratos caseiros com porções generosas. Ambiente familiar com jardim.</div>
+    </div>
+
+    <div class="subsecao-titulo">🏘️ Centro de Gonçalves</div>
+
+    <div class="card">
+      <div class="card-titulo">San Benedetto</div>
+      <div class="card-local">📍 R. Capitão Antônio Carlos, 195 — Centro</div>
+      <div class="card-desc">🍽️ Menu variado com fondue de queijo, ancho, tilápia à parmegiana e pratos mineiros. Um dos únicos que abre todos os dias para almoço e jantar (11h–15h e 18h–22h30).</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99142-9206</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Chalezinho Gastrobar</div>
+      <div class="card-local">📍 R. Capitão Antônio Carlos, 282 — Centro</div>
+      <div class="card-desc">🍽️ Cozinha contemporânea com releituras regionais. Especialidade: costelinha mineira assada na chapa com tutu, couve, torresmo e banana, servida em panelinhas. Dadinhos de tapioca, fondue e cervejas artesanais. Qua–Dom a partir das 12h.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(12) 99653-8077</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Mariá Restobar</div>
+      <div class="card-local">📍 Praça Monsenhor Dutra, 138 — Centro (casinha verde)</div>
+      <div class="card-desc">🍽️ Especialidade em carne de lata produzida na própria casa, linguiça de porco caseira e torresmo. Atendimento caloroso do proprietário Valdemir. Somente almoço. Pet-friendly.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @mariarestobar_</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Dom–Qui: 11h–15h | Sex–Sáb: 11h–16h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Gastrô.massas</div>
+      <div class="card-local">📍 Praça Monsenhor Dutra, 285 — Centro</div>
+      <div class="card-desc">🍽️ Massas artesanais refinadas: Sofioli de limão siciliano, Gorgonzola e Sardela. Ótimo para quem quer um almoço mais elaborado no centro.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">A Casinha Vinhos & Grill <span class="badge badge-destaque">Wine Bar</span></div>
+      <div class="card-local">📍 R. Antônio Caetano da Rosa, 370 — Centro</div>
+      <div class="card-desc">🍽️ Wine bar com massas artesanais e vinhos selecionados pelos próprios donos. Destaque para as pastas e a atenção pessoal na escolha dos rótulos.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 95305-0112</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Qui–Seg e feriados: 12h–15h e 18h–22h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Janelas com Tramela <span class="badge badge-destaque">Música ao vivo</span></div>
+      <div class="card-local">📍 R. Coronel João Vieira, 65 — Centro</div>
+      <div class="card-desc">🍽️ Bar e boteco fundado em 2010 com música ao vivo (sertanejo, MPB, blues, rock). Cardápio criativo e variado: truta, fondue, parmegiana, petiscos. Pet-friendly. Ingredientes sazonais de produtores locais.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99944-2030</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @janelas.oficial</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cabana Empório e Restaurante</div>
+      <div class="card-local">📍 Av. Francisco Tertuliano Ribeiro Neto, 240 — Centro</div>
+      <div class="card-desc">🍽️ Buffet diário farto com carnes, truta e comida mineira variada. Funciona todos os dias das 11h às 15h. Também vende produtos regionais.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 3654-1353</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Restaurante Mantiqueira</div>
+      <div class="card-local">📍 R. Joaquim Ferreira Souza, 37 — Centro</div>
+      <div class="card-desc">🍽️ O mais antigo de Gonçalves, fundado em 1979. Comida caseira simples e saborosa a preços justos, com aquele clima gostoso de interior mineiro. Somente almoço das 11h às 15h.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Bendita Villa</div>
+      <div class="card-local">📍 Centro</div>
+      <div class="card-desc">🍽️ Charmosa boutique para uma pausa no passeio. Bolos artesanais, chás e lanches. Destaque para o chá gelado de amora e bolo de cacau.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Padaria São Francisco</div>
+      <div class="card-local">📍 Centro — fachada colorida</div>
+      <div class="card-desc">🍽️ Padaria tradicional, ponto de encontro dos moradores. Pão com linguiça, guaraná Jota Fe e café da manhã mineiro. Ótimo para começar o dia.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Feira de Orgânicos da Mantiqueira <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 R. Fausto Rezende de Souza, 183 — Centro</div>
+      <div class="card-desc">🍽️ Sábados das 9h às 13h. Frutas, legumes, queijos, geleias e temperos direto dos produtores locais. Uma experiência autêntica de contato com a produção da Serra.</div>
+    </div>
+
+  </div>
+
+  <!-- 5. CAFÉ -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">☕</div>
+      <h2 class="secao-titulo">Café & Torrefação</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">📞</span>
+      <span>Entre em contato antes de visitar para confirmar horários de funcionamento.</span>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Bendita Torra <span class="badge badge-destaque">Experiência</span></div>
+      <div class="card-local">📍 Centro de Gonçalves</div>
+      <div class="card-desc">Torrefação de cafés especiais da Serra da Mantiqueira. Visite para conhecer os diferentes tipos de café, presenciar o processo de torra e provar na xícara o que a altitude de Gonçalves faz com os grãos. Uma experiência à parte que vai além do café.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @benditatorra | benditatorra.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CERVEJARIAS -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🍺</div>
+      <h2 class="secao-titulo">Cervejarias — Fabricantes</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">📞</span>
+      <span><strong>Importante:</strong> Entre em contato antes de visitar para confirmar horários de funcionamento, especialmente em dias de semana, feriados e baixa temporada.</span>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cervejaria 3 Orelhas <span class="badge badge-destaque">Mais visitada</span></div>
+      <div class="card-local">📍 Estrada de São Sebastião das 3 Orelhas, km 5 — Sítio Santa Fé, Gonçalves</div>
+      <div class="card-desc">A mais famosa da região. Bar, restaurante, petiscos e cervejas direto da câmara fria em 15 torneiras. Vista para a Mantiqueira. Visitações guiadas à fábrica disponíveis. Cervejas exclusivas só disponíveis no local.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(11) 94131-9899</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @cervejaria3orelhas | cervejaria3orelhas.com</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Dom–Qui: 11h–18h | Sex–Sáb: 11h–20h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Odara Cervejaria</div>
+      <div class="card-local">📍 Estrada Municipal São Sebastião, km 1 — Gonçalves</div>
+      <div class="card-desc">Cervejaria local com cervejas autorais e música ao vivo. Destaque para a Tropicália, feita com milho crioulo defumado — única e marcante. Ambiente acolhedor e pet-friendly. Cozinha própria com o famoso bolinho de bacalhau.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 99946-2304</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @odara.cervejaria</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Confirmar horário diretamente</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Nano Cervejaria Tereza</div>
+      <div class="card-local">📍 Estrada do Mundo Novo, km 4,6 — Bairro Mundo Novo, Gonçalves</div>
+      <div class="card-desc">Produção em pequena escala com 9 estilos diferentes, das mais leves às mais encorpadas. Ambiente de quintal de roça com vista para as montanhas e um lago. Petiscos artesanais — não perca o famoso Guioza da Tereza.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(11) 99559-4602</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>@cerveja_tereza</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Sex: 13h–19h | Sáb, Dom e feriados: 11h–19h</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Cervejaria Sapucaí <span class="badge badge-carro">~20 min</span></div>
+      <div class="card-local">📍 Estrada do Rio Manso — Sapucaí-Mirim, MG</div>
+      <div class="card-desc">Produzida com água mineral da própria fonte. Cervejas com sabores tropicais da Mantiqueira: maracujá, manga e cambuci. Uma experiência diferente e muito regional.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>@sapucaicervejaria | cervejariasapucai.com.br</span></div>
+        <div class="card-info-item"><span class="label">🕐</span> <span>Confirmar horário diretamente</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. PASSEIOS A CAVALO -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🐴</div>
+      <h2 class="secao-titulo">Passeios a Cavalo</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">📞</span>
+      <span>Agende com antecedência. Entre em contato para confirmar disponibilidade e horários.</span>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Rancho André Neto</div>
+      <div class="card-local">📍 Gonçalves</div>
+      <div class="card-desc">Passeios turísticos a cavalo com mais de 10 anos de experiência. Oferece aulas de equitação, doma inteligente e pensão. Ótimo para famílias e crianças. Ambiente acolhedor e seguro.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @ranchoandreneto</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Mantiqueira Ecoturismo</div>
+      <div class="card-local">📍 Gonçalves</div>
+      <div class="card-desc">Também oferece passeios a cavalo pela região, combinando trilhas rurais com as paisagens da Serra da Mantiqueira.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">☎️</span> <span>(35) 98436-9548 / (35) 99840-5248</span></div>
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @mantiqueiraecoturismo | mantiqueiratur.com.br</span></div>
+      </div>
+    </div>
+
+    <div class="aviso-card" style="margin-top:8px;">
+      <span class="icone">🎒</span>
+      <span>Leve calça comprida e tênis fechado ou bota. Ideal para qualquer nível de experiência com cavalos.</span>
+    </div>
+  </div>
+
+  <!-- 8. PASSEIOS 4x4 -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🚙</div>
+      <h2 class="secao-titulo">Passeios 4×4 e Off-Road</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">⚠️</span>
+      <span>Para todos os passeios off-road recomenda-se veículo 4×4 com reduzida e acompanhamento de guia especializado. Com chuva, as estradas ficam muito mais difíceis.</span>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Serra da Balança <span class="badge badge-destaque">Imperdível</span></div>
+      <div class="card-local">📍 Bairro Venâncios (Gonçalves) até Bairro Serrano (São Bento do Sapucaí, SP)</div>
+      <div class="card-desc">Antigo caminho de tropeiros com altitudes entre 1.300m e 1.750m. Vegetação de Mata Atlântica, araucárias e pastagens. Alguns picos têm paredes verticais de mais de 100 metros voltadas para o Vale do Sapucaí. Do alto dá para avistar a Pedra do Baú e Campos do Jordão. Vista absolutamente deslumbrante.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">⚠️ Veículo:</span> <span>Obrigatório 4×4 com reduzida e pneu MT (pickup/jipe). SUV pode ter dificuldades.</span></div>
+        <div class="card-info-item"><span class="label">⏱️ Duração:</span> <span>~3 horas de passeio</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Circuito Pedra do Jair + Serra da Balança</div>
+      <div class="card-local">📍 Saída de Gonçalves</div>
+      <div class="card-desc">Passeio completo passando por cachoeiras, Pedra Chanfrada, Pedra do Jair e Serra da Balança. Inclui mirante com vista para São Bento do Sapucaí. Dia inteiro de aventura off-road.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">⚠️ Veículo:</span> <span>Exige 4×4 com reduzida — pickup e jipes. Não recomendado para SUV padrão.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Roteiro Alambique + Cachoeiras</div>
+      <div class="card-local">📍 Zona rural de Gonçalves</div>
+      <div class="card-desc">Roteiro pela zona rural passando por cachoeiras e terminando no Alambique Três Barras. Qualquer carro de passeio chega ao alambique — não exige 4×4. Ótima combinação de natureza e cultura local.</div>
+    </div>
+
+    <div class="subsecao-titulo">🧭 Agências para contratar passeios</div>
+
+    <div class="card">
+      <div class="card-titulo">Mantiqueira Ecoturismo</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">🌐</span> <span>mantiqueiratur.com.br</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Conexão Gonçalves</div>
+      <div class="card-desc">Guia local especializado em roteiros off-road e ecoturismo da região.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Caminhos da Fer</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">🌐</span> <span>caminhosdafer.com.br</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. CULTURA -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🎨</div>
+      <h2 class="secao-titulo">Cultura & História</h2>
+    </div>
+
+    <div class="aviso-card">
+      <span class="icone">📞</span>
+      <span>Entre em contato antes de visitar para confirmar disponibilidade de atendimento.</span>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Ateliê da Dona Rosa <span class="badge badge-destaque">Único</span></div>
+      <div class="card-local">📍 Bairro Remédios — ~10 km do centro</div>
+      <div class="card-desc">Dona Rosa Ribeiro pinta quadros com terra — arte única que representa a alma de Gonçalves. Com mais de 81 anos de vida, é uma das artistas mais amadas da cidade. Uma visita que emociona.</div>
+      <div class="card-info">
+        <div class="card-info-item"><span class="label">📱</span> <span>Instagram: @rosapintacomterra</span></div>
+        <div class="card-info-item"><span class="label">💡 Dica:</span> <span>Leve dinheiro para comprar uma obra. É souvenir com alma.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Casa de Pau a Pique Centenária <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 Estrada dos Venâncios — Bairro Venâncios, 7 km do centro</div>
+      <div class="card-desc">A casa mais antiga do município, com mais de 150 anos de história. Preservada em seu exterior conforme foi construída. Vista de fora enquanto passa pela Estrada dos Venâncios.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-titulo">Igreja Nossa Senhora das Dores <span class="badge badge-gratis">Gratuito</span></div>
+      <div class="card-local">📍 Centro de Gonçalves</div>
+      <div class="card-desc">Marco histórico e arquitetônico no coração da cidade. Sede da centenária Banda Musical Lira Nossa Senhora das Dores.</div>
+    </div>
+  </div>
+
+  <!-- 10. COMPRAS -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-icone">🛒</div>
+      <h2 class="secao-titulo">O Que Levar de Lembrança</h2>
+    </div>
+
+    <div class="compras-grid">
+      <div class="compras-item"><span class="emoji">🧀</span>Queijo Canastra Artesanal</div>
+      <div class="compras-item"><span class="emoji">🍯</span>Doce de Leite de Tachão</div>
+      <div class="compras-item"><span class="emoji">🥃</span>Cachaça — Alambique Três Barras<br><small style="font-size:11px;color:#888">Acesso para qualquer carro</small></div>
+      <div class="compras-item"><span class="emoji">🍺</span>Cervejas da 3 Orelhas</div>
+      <div class="compras-item"><span class="emoji">🖼️</span>Quadro de Terra — Dona Rosa</div>
+      <div class="compras-item"><span class="emoji">☕</span>Café Especial — Bendita Torra</div>
+      <div class="compras-item"><span class="emoji">🫙</span>Geleias — Senhora das Especiarias</div>
+      <div class="compras-item"><span class="emoji">🌿</span>Produtos Orgânicos — Feira do Sábado</div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <div class="card">
+        <div class="card-titulo">Alambique Três Barras — Cachaça Gonçalves <span class="badge badge-destaque">Visita + Degustação</span></div>
+        <div class="card-local">📍 Estrada São Bento do Sapucaí–Gonçalves, km 3,9 — 8 min do centro</div>
+        <div class="card-desc">Fundado em 1952, produz cachaça 100% artesanal com engenho movido à água. Visita guiada mostrando engenho, destilação e envelhecimento em barris de carvalho. Degustação gratuita de todos os sabores: pura, banana, figo, canela, mel e mais. <strong>Acesso para qualquer veículo de passeio.</strong></div>
+        <div class="card-info">
+          <div class="card-info-item"><span class="label">☎️</span> <span>Use o Waze: "Alambique Cachaça Gonçalves"</span></div>
+          <div class="card-info-item"><span class="label">📱</span> <span>@alambique_goncalves | cachacagoncalves.com.br</span></div>
+          <div class="card-info-item"><span class="label">🕐</span> <span>Seg–Sáb: 9h–18h | Dom: 9h–16h</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">A Pioneira — Empório</div>
+        <div class="card-local">📍 Centro de Gonçalves</div>
+        <div class="card-desc">Queijos, geleias, doces, vinhos, cachaças e cervejas especiais locais — com degustação! Uma perdição.</div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">A Senhora das Especiarias</div>
+        <div class="card-local">📍 Centro de Gonçalves</div>
+        <div class="card-desc">Geleias exóticas, temperos artesanais e sorvetes orgânicos de amora. Parada obrigatória.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DICA FINAL -->
+  <div class="dica-anfitriao">
+    <div class="dica-anfitriao-titulo">✨ Dica Especial do Anfitrião</div>
+    <p>Se as condições do tempo permitirem, tente acordar antes das 6h30 e sentar no deck com um café. Em dias frios e úmidos — especialmente no inverno e no outono — a névoa que desce das pedras, o canto dos pássaros e o silêncio absoluto da Mantiqueira formam um espetáculo que nenhum roteiro consegue descrever. Quando acontece, esse momento vale toda a viagem. Mas atenção: não é garantido todos os dias — depende da temperatura, da umidade e da época do ano. Vale sempre tentar! <em>É o verdadeiro presente do Refúgio Atrás da Pedra.</em> ☕🌫️</p>
+  </div>
+
+</div><!-- /container -->
+
+<!-- RODAPÉ -->
+<div class="rodape">
+  <h3>Refúgio Atrás da Pedra</h3>
+  <p>Gonçalves, MG · Serra da Mantiqueira · 1.152m de altitude</p>
+  <div class="rodape-divider"></div>
+  <p>📞 Dúvidas? Fale com o anfitrião pelo Airbnb.</p>
+  <p>⭐ Se curtir a estadia, deixe sua avaliação no Airbnb!</p>
+  <p class="rodape-nota">Horários e informações sujeitos a alteração. Confirme sempre antes de visitar.</p>
+</div>
+
+</body>
+</html>
