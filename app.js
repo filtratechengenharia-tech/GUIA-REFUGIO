@@ -18,7 +18,8 @@ const I = {
   pack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2"/><rect x="4" y="8" width="16" height="13" rx="2.5"/><path d="M9 8v-.5M15 8v-.5M4 13h16"/></svg>',
   warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>',
   wa:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.69-6.16a11.86 11.86 0 0 1-1.6-5.95C.15 5.32 5.5 0 12.07 0a11.82 11.82 0 0 1 8.41 3.49 11.76 11.76 0 0 1 3.48 8.4c0 6.56-5.35 11.9-11.9 11.9a12 12 0 0 1-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.27 1.6 5.46 1.6 5.45 0 9.9-4.43 9.9-9.9a9.82 9.82 0 0 0-9.88-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.3.67 4.02 1.8 5.82l-1 3.65 3.62-.97zM17.9 14.6c-.07-.12-.27-.2-.57-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.47 1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.69.25-1.28.18-1.41z"/></svg>',
-  chev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>'
+  chev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
+  fb:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>'
 };
 
 /* ---------- helpers ---------- */
@@ -37,6 +38,7 @@ function contacts(c) {
   if (c.phone) out.push(`<a class="contact-btn phone" href="${telHref(c.phone)}">${I.phone}${c.phone}</a>`);
   if (c.insta) out.push(`<a class="contact-btn insta" href="https://instagram.com/${c.insta}" target="_blank" rel="noopener">${I.insta}@${c.insta}</a>`);
   if (c.web)   out.push(`<a class="contact-btn web" href="https://${c.web}" target="_blank" rel="noopener">${I.web}${c.web}</a>`);
+  if (c.fb)    out.push(`<a class="contact-btn fb" href="https://facebook.com/${c.fb}" target="_blank" rel="noopener">${I.fb}Facebook</a>`);
   if (c.hours) out.push(`<span class="contact-btn hours">${I.clock}${c.hours}</span>`);
   if (!out.length) return '';
   return `<div class="card-actions">${out.join('')}</div>`;

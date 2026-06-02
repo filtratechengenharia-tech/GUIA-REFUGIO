@@ -492,6 +492,7 @@ a { color: inherit; text-decoration: none; }
 .contact-btn.phone:hover { background: var(--verde-medio); color: #fff; border-color: var(--verde-medio); }
 .contact-btn.insta:hover { background: var(--terracota); color: #fff; border-color: var(--terracota); }
 .contact-btn.web:hover { background: var(--marrom); color: #fff; border-color: var(--marrom); }
+.contact-btn.fb:hover { background: #1877f2; color: #fff; border-color: #1877f2; }
 .contact-btn.hours { cursor: default; background: transparent; }
 .contact-btn.hours:hover { transform: none; }
 
@@ -792,7 +793,7 @@ a { color: inherit; text-decoration: none; }
 /* ===========================================================
    RESPONSIVE
    =========================================================== */
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .banner { background-attachment: scroll; }
   .nav-links {
     position: fixed;

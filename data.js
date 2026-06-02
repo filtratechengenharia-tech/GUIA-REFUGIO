@@ -86,6 +86,14 @@ window.GUIDE = {
           { title: 'Pico da Raposa', badges:[{t:'Carro comum',c:'carro'}], loc:'Córrego do Bom Jesus, ~20 min — estrada com placas',
             desc:'A 1.480 m, por estrada pavimentada — qualquer carro chega. Vista panorâmica da Mantiqueira, Córrego do Bom Jesus e Cambuí, com rampa de parapente. O pôr do sol daqui é espetacular.' }
         ]
+      },
+      {
+        label: '🧭 Guia para contratar',
+        cards: [
+          { title: 'Caminhos de Gonçalves', badges:[{t:'Guia local',c:'destaque'}], loc:'Gonçalves — trilhas guiadas',
+            desc:'Guia local de trilhas pela Serra da Mantiqueira. Acompanha as trilhas mais escondidas e os acessos que pedem orientação. Veja os roteiros e fale para agendar pelo Instagram.',
+            insta:'caminhosdegoncalves' }
+        ]
       }
     ],
     notice: { icon:'pack', html:'Leve sempre: <strong>tênis fechado, água (mín. 1,5 L), protetor solar, repelente e casaco leve.</strong>' }
@@ -100,6 +108,12 @@ window.GUIDE = {
           { title:'Bar do Zezé', badges:[{t:'Raiz',c:'destaque'}], loc:'Bairro Lambari — AMG-1930, km 07',
             desc:'Boteco mineiro raiz: feijoada, quirera, panqueca e cerveja gelada. Clima autêntico de interior, sem frescura. Ótimo para grupos.',
             phone:'(35) 99815-0162', insta:'bardozeze.goncalves' },
+          { title:'Pizzaria Varandinha', badges:[{t:'Pizza',c:'destaque'}], loc:'Estrada Lambari/Gonçalves, km 6,5 — Lambari',
+            desc:'Pizza em formato retangular, servida na tábua e cortada na mesa pelo chef. Clima de roça, na área rural a caminho de Lambari.',
+            phone:'(35) 99937-4697' },
+          { title:'Empório e Pizzaria Tô Na Roça', badges:[{t:'Pizza',c:'destaque'}], loc:'Estrada de Gonçalves, km 6,5 — Bairro do Lambari',
+            desc:'Empório e pizzaria com pizzas artesanais e clima de roça, na serra a caminho de Lambari. Tem noites com música ao vivo — confira a programação no Instagram.',
+            phone:'(12) 99610-4999', insta:'etonaroca' },
           { title:'Sabor sem Freio', badges:[{t:'MasterChef',c:'destaque'}], loc:'Estrada São Sebastião, km 1,5 — Retiro',
             desc:'Cozinha mineira autoral do chef Danilo Costa (semifinalista MasterChef 2023). Truta com virado encapotado, galinhada e bife ancho. Pet-friendly.',
             phone:'(35) 99753-8322', insta:'saborsemfreio', meta:[{l:'⚠️', v:'Reserva recomendada'}] },
@@ -122,13 +136,14 @@ window.GUIDE = {
             desc:'Chef Juliana Pellis, ex-D.O.M de Alex Atala. Cozinha criativa mineira: tempurá de quiabo com maionese de pequi, purê de banana com truta. Fecha às quartas.',
             phone:'(35) 99927-4337', insta:'maritacas_restaurante' },
           { title:'Restaurante Karu', loc:'Estrada dos Venâncios',
-            desc:'Gastronomia contemporânea no meio do mato, chef Gabriela Gradim. Brunch com truta defumada, rabada com parmesão e ovos cremosos. Surpreendente!' },
+            desc:'Gastronomia contemporânea no meio do mato, chef Gabriela Gradim. Brunch com truta defumada, rabada com parmesão e ovos cremosos. Surpreendente!',
+            phone:'(35) 99953-3667', insta:'karurestaurante' },
           { title:'Ao Pé da Pedra', loc:'Acesso pela trilha da Pedra Chanfrada',
             desc:'Comida mineira no fogão a lenha, vista para a Pedra Chanfrada. Feijão tropeiro, frango caipira e o famoso suco de amora. Ideal após a trilha.',
-            insta:'restauranteaopedapedra', hours:'Sáb, Dom e feriados: 12h–15h30' },
+            phone:'(35) 99910-3866', insta:'restauranteaopedapedra', hours:'Sáb, Dom e feriados: 12h–15h30' },
           { title:'Restaurante Sauá', badges:[{t:'Enoturismo',c:'destaque'}], loc:'Pousada Bicho do Mato — Cantagalo, km 7,5',
             desc:'Cozinha contemporânea com raízes caipiras, chef Vitor Pompeu. Ambiente panorâmico, cozinha integrada ao salão. Winebar da Vinícola Artesã com degustação de vinhos e queijos.',
-            insta:'restaurantesaua', web:'restaurantesaua.com.br' },
+            phone:'(35) 99976-9970', insta:'restaurantesaua', web:'restaurantesaua.com.br' },
           { title:'Nó de Pinho', badges:[{t:'Romântico',c:'destaque'}], loc:'Três Orelhas, km 2,5 — Pousada Solar d’Araucária',
             desc:'Ambiente romântico com lareiras. Risoto de pinhão, peixe com farinha de amêndoa e frango na cerveja. Um dos mais sofisticados — confirme disponibilidade (atende sobretudo hóspedes).',
             phone:'(35) 3654-1398', insta:'nodepinhogastronomia', hours:'Sex/Sáb/feriados: 13h e 19h' },
@@ -136,7 +151,8 @@ window.GUIDE = {
             desc:'Comida típica mineira no fogão a lenha, self-service à vontade. Aquela sensação de parar no tempo. Fins de semana e feriados.',
             phone:'(35) 99837-0876' },
           { title:'Restaurante Vida Verde', loc:'Estrada de São Sebastião, km 3,5 — Boa Vista',
-            desc:'Culinária mineira tradicional em pousada aberta ao público. Filé ao molho madeira e pratos caseiros com porções generosas. Ambiente familiar com jardim.' }
+            desc:'Culinária mineira tradicional em pousada aberta ao público. Filé ao molho madeira e pratos caseiros com porções generosas. Ambiente familiar com jardim.',
+            phone:'(35) 99898-3832' }
         ]
       },
       {
@@ -152,7 +168,8 @@ window.GUIDE = {
             desc:'Carne de lata feita na casa, linguiça de porco caseira e torresmo. Atendimento caloroso do Valdemir. Só almoço. Pet-friendly.',
             insta:'mariarestobar_', hours:'Dom–Qui: 11h–15h | Sex–Sáb: 11h–16h' },
           { title:'Gastrô.massas', loc:'Praça Monsenhor Dutra, 285',
-            desc:'Massas artesanais refinadas: sofioli de limão siciliano, gorgonzola e sardela. Ótimo para um almoço mais elaborado no centro.' },
+            desc:'Massas artesanais refinadas: sofioli de limão siciliano, gorgonzola e sardela. Ótimo para um almoço mais elaborado no centro.',
+            phone:'(11) 98121-3422', insta:'gastro.massas' },
           { title:'A Casinha Vinhos & Grill', badges:[{t:'Wine Bar',c:'destaque'}], loc:'R. Antônio Caetano da Rosa, 370',
             desc:'Wine bar com massas artesanais e vinhos selecionados pelos donos. Destaque para as pastas e a atenção pessoal nos rótulos.',
             phone:'(35) 95305-0112', hours:'Qui–Seg e feriados: 12h–15h e 18h–22h' },
@@ -164,11 +181,13 @@ window.GUIDE = {
             phone:'(35) 3654-1353', hours:'Todos os dias: 11h–15h' },
           { title:'Restaurante Mantiqueira', loc:'R. Joaquim Ferreira Souza, 37',
             desc:'O mais antigo de Gonçalves (1979). Comida caseira simples e saborosa a preços justos, com clima de interior mineiro. Só almoço.',
-            hours:'11h–15h' },
+            phone:'(35) 3654-1380', hours:'11h–15h' },
           { title:'Bendita Villa', loc:'Centro',
-            desc:'Charmosa boutique para uma pausa: bolos artesanais, chás e lanches. Destaque para o chá gelado de amora e bolo de cacau.' },
+            desc:'Charmosa boutique para uma pausa: bolos artesanais, chás e lanches. Destaque para o chá gelado de amora e bolo de cacau.',
+            phone:'(35) 99876-4583' },
           { title:'Padaria São Francisco', loc:'Centro — fachada colorida',
-            desc:'Padaria tradicional, ponto de encontro dos moradores. Pão com linguiça, guaraná Jota Fé e café da manhã mineiro.' },
+            desc:'Padaria tradicional, ponto de encontro dos moradores. Pão com linguiça, guaraná Jota Fé e café da manhã mineiro.',
+            phone:'(35) 99829-0867', insta:'sao_franciscoo' },
           { title:'Feira de Orgânicos', badges:[{t:'Gratuito',c:'gratis'}], loc:'R. Fausto Rezende de Souza, 183',
             desc:'Sábados das 9h às 13h. Frutas, legumes, queijos, geleias e temperos direto dos produtores. Experiência autêntica da Serra.',
             hours:'Sábados: 9h–13h' },
@@ -178,7 +197,7 @@ window.GUIDE = {
         ]
       }
     ],
-    notice: { icon:'phone', html:'<strong>Confirme horários e disponibilidade por telefone</strong> antes de ir — especialmente em dias de semana e baixa temporada.' }
+    notice: { icon:'phone', html:'<strong>Confirme horários e disponibilidade por telefone</strong> antes de ir — especialmente em dias de semana e baixa temporada. Os números foram conferidos com cuidado, mas <strong>podem ter mudado</strong> com o tempo.' }
   },
 
   /* ---- 5. CERVEJARIAS ---- */
@@ -197,7 +216,7 @@ window.GUIDE = {
         desc:'Produzida com água mineral da própria fonte. Sabores tropicais da Mantiqueira: maracujá, manga e cambuci. Uma experiência diferente e regional.',
         insta:'sapucaicervejaria', web:'cervejariasapucai.com.br', hours:'Confirmar diretamente' }
     ],
-    notice: { icon:'phone', html:'<strong>Importante:</strong> confirme os horários por telefone antes de visitar — sobretudo em dias de semana, feriados e baixa temporada.' }
+    notice: { icon:'phone', html:'<strong>Importante:</strong> confirme os horários por telefone antes de visitar — sobretudo em dias de semana, feriados e baixa temporada. Os números <strong>podem ter mudado</strong> com o tempo.' }
   },
 
   /* ---- 6. CAVALO ---- */
@@ -222,9 +241,6 @@ window.GUIDE = {
           { title:'Serra da Balança', badges:[{t:'Imperdível',c:'destaque'}], loc:'Venâncios (Gonçalves) → Serrano (São Bento do Sapucaí, SP)',
             desc:'Antigo caminho de tropeiros entre 1.300 e 1.750 m. Mata Atlântica, araucárias e pastagens, com paredes verticais de +100 m sobre o Vale do Sapucaí. Do alto se avista a Pedra do Baú e Campos do Jordão.',
             meta:[{l:'⚠️ Veículo:', v:'4×4 com reduzida e pneu MT (pickup/jipe). SUV pode ter dificuldades.'},{l:'⏱️ Duração:', v:'~3 horas'}] },
-          { title:'Pedra do Jair + Serra da Balança', loc:'Saída de Gonçalves',
-            desc:'Passeio completo por cachoeiras, Pedra Chanfrada, Pedra do Jair e Serra da Balança, com mirante para São Bento do Sapucaí. Dia inteiro de aventura.',
-            meta:[{l:'⚠️ Veículo:', v:'4×4 com reduzida — pickup e jipes. Não indicado para SUV padrão.'}] },
           { title:'Alambique + Cachoeiras', loc:'Zona rural de Gonçalves',
             desc:'Roteiro pela zona rural passando por cachoeiras e terminando no Alambique Três Barras. Qualquer carro chega ao alambique — natureza e cultura local juntas.' }
         ]
@@ -233,7 +249,7 @@ window.GUIDE = {
         label: '🧭 Agências para contratar',
         cards: [
           { title:'Mantiqueira Ecoturismo', desc:'Roteiros off-road e ecoturismo da região.', web:'mantiqueiratur.com.br' },
-          { title:'Conexão Gonçalves', desc:'Guia local especializado em roteiros off-road e ecoturismo.' },
+          { title:'Conexão Gonçalves', desc:'Guia local especializado em roteiros off-road e ecoturismo.', phone:'(35) 99715-9191', insta:'conexaogoncalves4x4ecoaventura' },
           { title:'Caminhos da Fer', desc:'Roteiros guiados pela Serra da Mantiqueira.', web:'caminhosdafer.com.br' }
         ]
       }
@@ -250,9 +266,9 @@ window.GUIDE = {
       { title:'Casa de Pau a Pique Centenária', badges:[{t:'Gratuito',c:'gratis'}], loc:'Estrada dos Venâncios — 7 km do centro', accent:'culture',
         desc:'A casa mais antiga do município, com mais de 150 anos. Preservada externamente como foi construída — admire de fora ao passar pela Estrada dos Venâncios.' },
       { title:'Igreja Nossa Senhora das Dores', badges:[{t:'Gratuito',c:'gratis'}], loc:'Centro de Gonçalves', accent:'culture',
-        desc:'Marco histórico e arquitetônico no coração da cidade. Sede da centenária Banda Musical Lira Nossa Senhora das Dores.' }
+        desc:'Marco histórico e arquitetônico no coração da cidade. Sede da centenária Banda Musical Lira Nossa Senhora das Dores.', fb:'paroquiansdores' }
     ],
-    notice: { icon:'phone', html:'Entre em contato antes de visitar para <strong>confirmar disponibilidade de atendimento.</strong>' }
+    notice: { icon:'phone', html:'Entre em contato antes de visitar para <strong>confirmar disponibilidade de atendimento.</strong> Os números <strong>podem ter mudado</strong> com o tempo.' }
   },
 
   /* ---- 9. COMPRAS ---- */
@@ -271,8 +287,10 @@ window.GUIDE = {
       desc:'Fundado em 1952, produz cachaça 100% artesanal com engenho movido à água. Visita guiada pelo engenho, destilação e barris de carvalho, com degustação gratuita: pura, banana, figo, canela, mel e mais. <strong>Acesso para qualquer veículo.</strong>',
       meta:[{l:'📍 Waze:', v:'"Alambique Cachaça Gonçalves"'}], insta:'alambique_goncalves', web:'cachacagoncalves.com.br', hours:'Seg–Sáb: 9h–18h | Dom: 9h–16h' },
     { title:'A Pioneira — Empório', loc:'Centro de Gonçalves',
-      desc:'Queijos, geleias, doces, vinhos, cachaças e cervejas locais — com degustação! Uma perdição.' },
+      desc:'Queijos, geleias, doces, vinhos, cachaças e cervejas locais — com degustação! Uma perdição.',
+      phone:'(35) 99974-1512' },
     { title:'A Senhora das Especiarias', loc:'Centro de Gonçalves',
-      desc:'Geleias exóticas, temperos artesanais e sorvetes orgânicos de amora. Parada obrigatória.' }
+      desc:'Geleias exóticas, temperos artesanais e sorvetes orgânicos de amora. Parada obrigatória.',
+      phone:'(35) 3654-1450' }
   ]
 };
